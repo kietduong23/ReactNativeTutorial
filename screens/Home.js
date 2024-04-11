@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5F5F5",
     justifyContent: "center",
     paddingHorizontal: 25,
-    marginTop: 5
+    paddingTop: 5
   },
   heading: {
     fontWeight: "bold",
@@ -89,7 +89,8 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     flexDirection: "row",
-    columnGap: 10
+    columnGap: 10,
+    justifyContent: "center"
   },
   footerContainer: {
     flexDirection: "row",
