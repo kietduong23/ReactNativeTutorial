@@ -1,14 +1,14 @@
 import React from 'react'
 import { Image, Text, View, StyleSheet } from 'react-native'
 
-const Card = () => {
+const Card = ({title, image, text}) => {
     return (
         <View style={styles.container}>
             <View style={styles.cardBody}>
-                <Text style={styles.cardText}>3</Text>
-                <Image style={styles.img} source={require("../assets/news.png")} />
+                <Text style={styles.cardText}>{text}</Text>
+                <Image style={styles.img} source={image} />
             </View>
-            <Text style={styles.cardTitle}>News</Text>
+            <Text style={styles.cardTitle}>{title}</Text>
         </View>
     )
 }
@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
     },
     cardTitle: {
         fontWeight: "bold",
-        marginTop: 2
+        marginTop: 2,
+        fontSize: 12
     },
     cardText: {
         color: "#949494",

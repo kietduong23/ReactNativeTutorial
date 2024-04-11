@@ -1,6 +1,4 @@
-import React from 'react'
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import Header from '../components/Header';
+import { StatusBar, StyleSheet, Text, View, Image } from 'react-native';
 import ProfileCard from '../components/ProfileCard';
 import Card from '../components/Card';
 
@@ -17,9 +15,9 @@ const Home = () => {
       <View>
         <Text style={styles.heading}>School Updates</Text>
         <View style={styles.cardContainer}>
-          <Card />
-          <Card />
-          <Card />
+          <Card title="News" text={3} image={require("../assets/news.png")} />
+          <Card title="Events" text={3} image={require("../assets/events.png")} />
+          <Card title="Bulletin" text={3} image={require("../assets/bulletin.png")} />
         </View>
       </View>
 
@@ -27,9 +25,9 @@ const Home = () => {
       <View>
         <Text style={styles.heading}>Academics</Text>
         <View style={styles.cardContainer}>
-          <Card />
-          <Card />
-          <Card />
+          <Card title="Assignment" text={3} image={require("../assets/assignment.png")} />
+          <Card title="Fee" text={3} image={require("../assets/fee.png")} />
+          <Card title="Attendance" text={3} image={require("../assets/attendance.png")} />
         </View>
       </View>
 
@@ -37,19 +35,46 @@ const Home = () => {
       <View>
         <Text style={styles.heading}>Communication</Text>
         <View style={styles.cardContainer}>
-          <Card />
-          <Card />
-          <Card />
+          <Card title="Chat" text={3} image={require("../assets/chat.png")} />
+          <Card title="Fee" text={3} image={require("../assets/sms.png")} />
+          <Card title="Camera" text={3} image={require("../assets/camera.png")} />
         </View>
       </View>
 
       {/* Today */}
       <View>
-      <Text style={styles.heading}>Today</Text>
+        <Text style={styles.heading}>Today</Text>
         <View style={styles.cardContainer}>
-          <Card />
-          <Card />
-          <Card />
+          <View style={styles.todayListItem}>
+            <View style={styles.todayImgContainer}>
+              <Image style={styles.todayItemImg} source={require("../assets/quote.png")} />
+            </View>
+            <Text style={styles.todayItemTitle}>Quote</Text>
+          </View>
+          <View style={styles.todayListItem}>
+            <View style={styles.todayImgContainer}>
+              <Image style={styles.todayItemImg} source={require("../assets/thought.png")} />
+            </View>
+            <Text style={styles.todayItemTitle}>Thought</Text>
+          </View>
+          <View style={styles.todayListItem}>
+            <View style={styles.todayImgContainer}>
+              <Image style={styles.todayItemImg} source={require("../assets/word.png")} />
+            </View>
+            <Text style={styles.todayItemTitle}>Word</Text>
+          </View>
+          <View style={styles.todayListItem}>
+            <View style={styles.todayImgContainer}>
+              <Image style={styles.todayItemImg} source={require("../assets/edu.png")} />
+            </View>
+            <Text style={styles.todayItemTitle}>Edu-news</Text>
+          </View>
+          <View style={styles.todayListItem}>
+            <View style={styles.todayImgContainer}>
+              <Image style={styles.todayItemImg} source={require("../assets/city.png")} />
+            </View>
+            <Text style={styles.todayItemTitle}>City</Text>
+          </View>
         </View>
       </View>
 
@@ -91,6 +116,26 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     columnGap: 10,
     justifyContent: "center"
+  },
+  todayItemImg: {
+    width: 35,
+    height: 35
+  },
+  todayImgContainer: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10
+  },
+  todayListItem: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  todayItemTitle: {
+    fontWeight: "bold",
+    fontSize: 12,
+    marginTop: 5
   },
   footerContainer: {
     flexDirection: "row",
