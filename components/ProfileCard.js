@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     },
     background: {
         borderRadius: 25,
-        height: 130,
+        height: 135,
         width: "100%"
     },
     boxShadow: {
