@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View, Platform } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 
 const ProfileCard = () => {
@@ -14,10 +14,10 @@ const ProfileCard = () => {
 
             <LinearGradient
                 colors={['#FF0000', '#DF007A', '#BD00FF']}
-                style={[styles.background, styles.boxShadow]}
+                style={[styles.background]}
             />
 
-            <View style={styles.cardBody}>
+            <View style={[styles.cardBody, styles.boxShadow]}>
                 <Image style={styles.profileImg} source={require("../assets/profile.jpg")} />
                 <View style={styles.profileContainer}>
                     <Text style={[styles.text, styles.profileName]}>Levi Ackerman</Text>
@@ -63,13 +63,21 @@ const styles = StyleSheet.create({
         width: "100%"
     },
     boxShadow: {
-        shadowColor: "#000000",
-        shadowOffset: {
-            height: 5,
-            width: 0
-        },
-        shadowRadius: 4,
-        shadowOpacity: 0.4
+        ...Platform.select({
+            ios: {
+                shadowColor: "#000000",
+                shadowOffset: {
+                    height: 5,
+                    width: 0
+                },
+                shadowRadius: 4,
+                shadowOpacity: 0.4
+            },
+            android: {
+                elevation: 6,
+                shadowColor: "#000000",
+            }
+        })
     },
     cardBody: {
         position: 'absolute',
