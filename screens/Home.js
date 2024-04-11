@@ -1,4 +1,4 @@
-import { StatusBar, StyleSheet, Text, View, Image } from 'react-native';
+import { StatusBar, StyleSheet, Text, View, Image, Platform } from 'react-native';
 import ProfileCard from '../components/ProfileCard';
 import Card from '../components/Card';
 
@@ -6,7 +6,7 @@ import Card from '../components/Card';
 const Home = () => {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle={Platform.OS === "ios" ? "dark-content" : "light-content"} />
 
       {/* Profile */}
       <ProfileCard />
